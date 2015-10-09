@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+
+    <string name="utilisateur">User</string>
+    <string name="motdepasse">Password</string>
+    <string name="confmotdepasse">Comfirm Password</string>
+    <string name="prenom">First Name</string>
+    <string name="nom">Last Name</string>
+    <string name="adresse">Adress</string>
+    <string name="connexion">Sign in</string>
+    <string name="inscription">Sign up</string>
+
+
+</resources>

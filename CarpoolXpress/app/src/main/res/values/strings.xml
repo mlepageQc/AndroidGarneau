@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">CarpoolXpress</string>
+    <string name="hello_world">Hello world!</string>
+    <string name="action_settings">Settings</string>
+    <string name="recherche_parcours">Recherche de parcours</string>
+    <string name="passager">Passager</string>
+    <string name="conducteur">Conducteur</string>
+    <string name="point_depart_holder">Votre point de départ...</string>
+    <string name="point_arrivee_holder">Votre point d\'arrivée...</string>
+    <string name="point_depart">Point de départ</string>
+    <string name="point_arrivee">Point d\'arrivée</string>
+    <string name="date_label">Date</string>
+    <string name="time_label">Heure</string>
+    <string name="date_holder">JJ / MM / AAAA</string>
+    <string name="heure_holder">HH : MM</string>
+    <string name="utilisateur">Utilisateur</string>
+    <string name="motdepasse">Mot de passe</string>
+    <string name="connexion">Connexion</string>
+    <string name="inscription">Inscription</string>
+    <string name="titreDate">Choix de date</string>
+    <string name="titreHeure">Choix d\'heure</string>
+    <string name="rechercher">Rechercher</string>
+    <string name="ajouter_depart">Ajouter ce départ</string>
+    <string name="title_activity_recherche_passager">recherche_passager</string>
+    <string name="title_activity_recherche_passagers">RecherchePassagers</string>
+    <string name="title_activity_departs_conducteur">DepartsConducteur</string>
+    <string name="confmotdepasse">Confirmation de mot de passe</string>
+    <string name="prenom">Prénom</string>
+    <string name="nom">Nom</string>
+    <string name="adresse">Adresse</string>
+    <string name="option_artistes">Artistes</string>
+    <string name="option_albums">Albums</string>
+    <string name="option_genres">Genres</string>
+    <string name="option_playlists">Playlists</string>
+    <string name="drawer_open">Tiroir ouvert</string>
+    <string name="drawer_close">Tiroir fermé</string>
+    <string name="menu_reinitialisation">Reinitialiser</string>
+    <string name="deconnexion">Déconnexion</string>
+    <string name="modifier">Modifier un départ</string>
+    <string name="departs_titre">Liste des départs</string>
+    <string name="resultats_recherche">Départs trouvés</string>
+
+</resources>
