@@ -349,6 +349,7 @@ public class ConducteurFragment extends Fragment implements Button.OnClickListen
                             this.m_Offre_modif.setPointDepart(coordX);
                             this.m_Offre_modif.setPointArrivee(coordY);
                             this.m_Offre_modif.setNbPlaces(nbPlaces);
+                            this.m_Offre_modif.setPassagers(this.m_Offre_modif.getPassagers());
 
                             new PutOffreTask().execute((Void)null);
 

@@ -1,8 +1,10 @@
 package carpoolxpress.cours03e.dinfogarneau.com.carpoolxpress.activities;
 
 import android.app.AlertDialog;
+import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.net.Uri;
 import android.os.AsyncTask;
 import android.support.v7.app.ActionBarActivity;
@@ -25,6 +27,7 @@ import org.apache.http.impl.client.BasicResponseHandler;
 import org.apache.http.impl.client.DefaultHttpClient;
 
 import java.net.URLDecoder;
+import java.util.ArrayList;
 import java.util.List;
 
 import carpoolxpress.cours03e.dinfogarneau.com.carpoolxpress.R;
@@ -37,7 +40,7 @@ public class DepartsConducteur extends ActionBarActivity implements ListView.OnI
     private ListView departs;
     private android.support.v7.app.ActionBar actionBar;
     private OffreDataSource m_OffreDataSource;
-    private List<Offre> lstOffres;
+    private ArrayList<Offre> lstOffres;
     private LigneAdapter m_Adapter;
     private Offre offreASupprimer;
 
@@ -47,6 +50,9 @@ public class DepartsConducteur extends ActionBarActivity implements ListView.OnI
     private final static String REST_OFFRES = "/offre";
     private HttpClient m_ClientHttp = new DefaultHttpClient();
 
+    //Shared preferences
+    private SharedPreferences sp;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -55,6 +61,10 @@ public class DepartsConducteur extends ActionBarActivity implements ListView.OnI
         this.m_OffreDataSource = new OffreDataSource(this);
         this.m_OffreDataSource.open();
         this.departs = (ListView)this.findViewById(R.id.list_view_departs);
+        this.lstOffres = new ArrayList<Offre>();
+
+        //Récupération des préférences partagées
+        sp = this.getSharedPreferences("MyPrefs", Context.MODE_PRIVATE);
 
         this.resetUI();
 
@@ -79,7 +89,14 @@ public class DepartsConducteur extends ActionBarActivity implements ListView.OnI
 
     private void resetUI() {
         // Récupération de toutes les personnes dans la BD.
-        this.lstOffres = m_OffreDataSource.getAllOffres();
+        List<Offre> allOffres = m_OffreDataSource.getAllOffres();
+
+        for (int i=0; i < allOffres.size(); i ++) {
+            if ((allOffres.get(i).getUsername().equals(sp.getString("Utilisateur", "")))) {
+                lstOffres.add(allOffres.get(i));
+            }
+        }
+
         this.m_Adapter = new LigneAdapter();
         departs.setAdapter(m_Adapter);
         this.m_Adapter.notifyDataSetChanged();

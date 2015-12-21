@@ -1,8 +1,10 @@
 package carpoolxpress.cours03e.dinfogarneau.com.carpoolxpress.activities;
 
 import android.app.AlertDialog;
+import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.support.v7.app.ActionBar;
 import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
@@ -17,6 +19,7 @@ import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import carpoolxpress.cours03e.dinfogarneau.com.carpoolxpress.R;
@@ -27,15 +30,29 @@ public class RecherchePassagers extends ActionBarActivity implements ListView.On
 
     private ListView resultats;
     private ActionBar actionBar;
-    private List<Offre> lstOffres;
+    private ArrayList<Offre> lstOffres;
     private LigneAdapter m_Adapter;
+
+    private SharedPreferences sp;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_recherche_passagers);
 
-        lstOffres = (List<Offre>)getIntent().getSerializableExtra("lstResultatsOffres");
+        //Récupération des préférences partagées
+        sp = this.getSharedPreferences("MyPrefs", Context.MODE_PRIVATE);
+
+        lstOffres = new ArrayList<Offre>();
+
+        List<Offre> allOffres = (List<Offre>)getIntent().getSerializableExtra("lstResultatsOffres");
+
+        for (int i =0; i < allOffres.size(); i ++) {
+            if(!(allOffres.get(i).getUsername().equals(sp.getString("Utilisateur", "")))) {
+                lstOffres.add(allOffres.get(i));
+            }
+        }
+
         actionBar = getSupportActionBar();
 
         resultats = (ListView)this.findViewById(R.id.list_view_resultats);

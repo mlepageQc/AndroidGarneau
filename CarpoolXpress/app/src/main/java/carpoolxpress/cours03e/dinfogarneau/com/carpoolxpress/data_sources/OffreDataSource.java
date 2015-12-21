@@ -124,7 +124,7 @@ public class OffreDataSource {
         o.setNbPlaces((cursor.getInt(IDX_NB_PLACE)));
         o.setUsername(cursor.getString(IDX_USERNAME));
         o.setIdOffre(cursor.getString(IDX_ID_OFFRE));
-
+        o.setPassagers(cursor.getString(IDX_PASSAGERS));
         return o;
     }
 
@@ -142,7 +142,8 @@ public class OffreDataSource {
                             + "heure text,"
                             + "nbplace integer,"
                             + "username text, "
-                            + "idOffre integer)"
+                            + "idOffre integer, "
+                            + "passagers text)"
                     );
         }
         @Override
