@@ -3,6 +3,20 @@
     android:orientation="vertical" android:layout_width="match_parent"
     android:layout_height="match_parent">
 
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="200dp"
+        android:orientation="vertical">
+
+        <fragment xmlns:android="http://schemas.android.com/apk/res/android"
+            xmlns:tools="http://schemas.android.com/tools" android:layout_width="fill_parent"
+            android:layout_height="match_parent" android:id="@+id/map"
+            tools:context="carpoolxpress.cours03e.dinfogarneau.com.carpoolxpress.google_key.KeyGoogle"
+            android:name="com.google.android.gms.maps.SupportMapFragment" />
+
+    </LinearLayout>
+
     <ScrollView
         android:layout_width="fill_parent"
         android:layout_height="fill_parent">
@@ -14,43 +28,69 @@
 
             <LinearLayout
                 android:layout_width="fill_parent"
-                android:layout_height="wrap_content"
-                android:orientation="vertical"
-                android:layout_marginBottom="15dp">
+                android:layout_height="wrap_content">
 
                 <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:text="@string/point_depart"
-                    android:textStyle="bold"
-                    android:textSize="@dimen/abc_text_size_medium_material"
-                    android:layout_marginBottom="5dp"/>
+                    android:text="@string/distance_offre"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+
+                <TextView
+                    android:id="@+id/txt_distance"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:text="@string/titre_offre"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
 
                 <EditText
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:hint="@string/point_depart_holder"/>
+                    android:id="@+id/txt_titre_offre"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content" />
 
             </LinearLayout>
 
             <LinearLayout
                 android:layout_width="fill_parent"
                 android:layout_height="wrap_content"
-                android:orientation="vertical"
-                android:layout_marginBottom="15dp">
+                android:orientation="horizontal">
 
                 <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:text="@string/point_arrivee"
-                    android:textSize="@dimen/abc_text_size_medium_material"
-                    android:layout_marginBottom="5dp"
-                    android:textStyle="bold"/>
+                    android:text="@string/coord_depart"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
 
-                <EditText
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:hint="@string/point_arrivee_holder"/>
+                <TextView
+                    android:text="@string/place_holder_depart"
+                    android:id="@+id/txt_coord_depart"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:text="@string/coord_arrivee"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+
+                <TextView
+                    android:text="@string/place_holder_depart"
+                    android:id="@+id/txt_coord_arrivee"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
 
             </LinearLayout>
 
@@ -69,10 +109,8 @@
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
                         android:text="@string/date_label"
-                        android:textSize="@dimen/abc_text_size_medium_material"
                         android:layout_marginBottom="5dp"
-                        android:layout_marginRight="10dp"
-                        android:textStyle="bold">
+                        android:layout_marginRight="10dp">
                     </TextView>
 
                 </LinearLayout>
@@ -108,10 +146,8 @@
                         android:layout_height="match_parent"
                         android:text="@string/time_label"
                         android:textAlignment="center"
-                        android:textSize="@dimen/abc_text_size_medium_material"
                         android:layout_marginBottom="5dp"
-                        android:layout_marginRight="10dp"
-                        android:textStyle="bold">
+                        android:layout_marginRight="10dp">
                     </TextView>
 
                 </LinearLayout>
@@ -133,6 +169,20 @@
 
             </LinearLayout>
 
+            <TextView
+                android:text="@string/lbl_nb_places"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"/>
+
+            <EditText
+                android:id="@+id/txt_nb_place"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:textAlignment="center"
+                android:layout_marginBottom="5dp"
+                android:layout_marginRight="10dp">
+            </EditText>
+
             <Button
                 android:id="@+id/btn_ajouter_depart"
                 android:layout_width="fill_parent"
@@ -140,6 +190,7 @@
                 android:textAlignment="center"
                 android:layout_gravity="center_horizontal"
                 android:text="@string/ajouter_depart"/>
+
         </LinearLayout>
 
     </ScrollView>

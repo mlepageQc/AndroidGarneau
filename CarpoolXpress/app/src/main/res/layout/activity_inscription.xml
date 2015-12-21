@@ -47,6 +47,7 @@
             android:textStyle="bold"
             android:textSize="20dp"/>
         <EditText
+            android:id="@+id/txt_InscriptionUtilisateur"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:hint="Ex : jimbojim"/>
@@ -65,8 +66,10 @@
             android:textStyle="bold"
             android:textSize="20dp"/>
         <EditText
+            android:id="@+id/txt_InscriptionMotdePasse"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:inputType="textPassword"
             android:hint="Ex : badaboom"/>
     </LinearLayout>
     <LinearLayout
@@ -85,9 +88,29 @@
         <EditText
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:hint="Ex : popocks90@hotmail.com"/>
+            android:inputType="textPassword"
+            android:hint="Confirmer le mot de passe"/>
     </LinearLayout>
 
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:orientation="horizontal"
+        android:gravity="center_horizontal">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/adresse"
+            android:textStyle="bold"
+            android:textSize="20dp"/>
+        <EditText
+            android:id="@+id/txt_InscriptionAdresse"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:hint="Ex : 541 rue des sapins"/>
+    </LinearLayout>
     <LinearLayout
         android:layout_width="fill_parent"
         android:layout_height="0dp"
@@ -102,6 +125,7 @@
             android:textStyle="bold"
             android:textSize="20dp"/>
         <EditText
+            android:id="@+id/txt_InscriptionNom"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:hint="Ex : Bérubé"/>
@@ -120,6 +144,7 @@
             android:textStyle="bold"
             android:textSize="20dp"/>
         <EditText
+            android:id="@+id/txt_InscriptionPrenom"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:hint="ex : Steve"/>
